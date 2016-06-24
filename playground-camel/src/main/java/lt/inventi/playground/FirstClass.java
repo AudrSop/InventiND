@@ -17,7 +17,7 @@ public class FirstClass {
     public static void main(String[] args) throws Exception {
         AbstractXmlApplicationContext abstractXml = new ClassPathXmlApplicationContext("META-INF/application-context.xml");
         abstractXml.start();
-        Thread.sleep(20000);
+        Thread.sleep(2000);
         abstractXml.stop();
         abstractXml.destroy();
     }

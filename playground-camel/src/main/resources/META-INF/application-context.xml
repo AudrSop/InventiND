@@ -9,7 +9,6 @@
 >
 
     <bean id="playgroundRouteBuilder" class="lt.inventi.playground.PlaygroundRouteBuilder"/>
-    <bean id="firstBean" class="lt.inventi.playground.FirstBean"/>
 
     <amq:broker useJmx="false" persistent="true">
         <amq:transportConnectors>
