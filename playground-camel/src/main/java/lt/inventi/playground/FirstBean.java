@@ -14,8 +14,19 @@ public class FirstBean {
     public FirstBean() {
     }
 
-    public void helloWorldMethod() {
-        System.out.println("Hello, World!");
+    public void helloWorldMethod(String v) {
+        System.out.println("Hello, World! " + v);
     }
 
+    public void helloVilniusMethod(String v) {
+        System.out.println("Hello, Vilnius! " + v);
+    }
+
+    public void helloEveryoneMethod(String v) {
+        System.out.println("Hello, Everyone! " + v);
+    }
+
+    public int randomIntGenerator() {
+        return (int) (Math.random() * 11);
+    }
 }
