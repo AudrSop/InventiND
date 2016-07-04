@@ -8,6 +8,12 @@ public class PlaygroundRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
         from("direct:start")
                 .to("cxf:bean:pingPongEndpoint?wsdlURL=PingPong.wsdl&dataFormat=PAYLOAD");
+        
+//            from("timer:soapRequestTimer?{options}")
+//        .to("cxf:serviceUrl"));
+//        .to("jms:queue:someQueue"));
+
+
 //        from(simpleEndpointURI + "&dataFormat=PAYLOAD").to("log:info").process(new Processor() {
 //            @SuppressWarnings("unchecked")
 //            public void process(final Exchange exchange) throws Exception {

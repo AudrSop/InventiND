@@ -19,7 +19,7 @@
         <camel:routeBuilder ref="playgroundRouteBuilder"/>
     </camel:camelContext>
     <cxf:cxfEndpoint id="pingPongEndpoint"
-                     address="/Ping"
+                     address="http://localhost:8080/Ping"
                      wsdlURL="PingPong.wsdl" endpointName="s:PingPong"
                      serviceName="s:PingPongService"
                      xmlns:s="http://pingpong.bpel.tps">
