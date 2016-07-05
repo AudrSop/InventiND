@@ -6,5 +6,6 @@ public class PlaygroundRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
+         from("cxf:bean:pingPongEndpoint").to("log:info").log("${body} tirlpirli").setBody(simple("random", String.class)).unmarshal();
     }
 }
