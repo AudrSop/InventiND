@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>cxf</servlet-name>
-        <url-pattern>/soap/*</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -33,7 +33,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:portType name="PingPong">
+   <wsdl:portType name="PingPongService">
 
       <wsdl:operation name="echoInput">
 

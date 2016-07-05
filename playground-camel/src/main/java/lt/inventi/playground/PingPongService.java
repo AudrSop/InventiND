@@ -1,5 +1,6 @@
 package lt.inventi.playground;
 
+import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
@@ -10,5 +11,6 @@ import javax.jws.WebService;
 @WebService
 public interface PingPongService {
 
-    String saySomething(@WebParam(name="text") String text);
+    @WebMethod(operationName = "echoInput")
+    String echoInput(@WebParam(name="input") String input);
 }
