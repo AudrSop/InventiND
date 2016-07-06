@@ -10,6 +10,8 @@
                            http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd"
 >
     <bean id="playgroundRouteBuilder" class="lt.inventi.playground.PlaygroundRouteBuilder"/>
+    <bean id="testBean" class="lt.inventi.playground.TestBean"/>
+    <bean id="myProcessor" class="lt.inventi.playground.MyProcessor"/>
 
     <amq:broker useJmx="false" persistent="true">
         <amq:transportConnectors>
@@ -25,10 +27,11 @@
                      serviceName="s:PingPongService"
                      xmlns:s="http://pingpong.bpel.tps">
         <cxf:inInterceptors>
+            <ref bean="testBean"/>
             <bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>
         </cxf:inInterceptors>
         <cxf:properties>
-            <entry key="dataFormat" value="MESSAGE"/>
+            <entry key="dataFormat" value="PAYLOAD"/>
         </cxf:properties>
     </cxf:cxfEndpoint>
 </beans>

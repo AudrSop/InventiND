@@ -17,7 +17,7 @@ import javax.xml.ws.Service;
 @WebServiceClient(name = "PingPongService", 
                   wsdlLocation = "file:/C:/Users/Burbulas/InventiND/playground-camel/src/main/resources/PingPong.wsdl",
                   targetNamespace = "http://pingpong.bpel.tps") 
-public class PingPongService extends Service {
+public class PingPongService extends Service implements PingPong {
 
     public final static URL WSDL_LOCATION;
 
@@ -90,4 +90,8 @@ public class PingPongService extends Service {
         return super.getPort(PingPong, PingPong.class, features);
     }
 
+    @Override
+    public String echoInput(String input) {
+        return input;
+    }
 }
