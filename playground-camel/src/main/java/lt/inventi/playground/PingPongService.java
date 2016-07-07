@@ -15,7 +15,7 @@ import javax.xml.ws.Service;
  * 
  */
 @WebServiceClient(name = "PingPongService", 
-                  wsdlLocation = "file:/C:/Users/Burbulas/InventiND/playground-camel/src/main/resources/PingPong.wsdl",
+                  wsdlLocation = "file:/home/dev/Documents/InventiND/playground-camel/src/main/resources/PingPong.wsdl",
                   targetNamespace = "http://pingpong.bpel.tps") 
 public class PingPongService extends Service implements PingPong {
 
@@ -26,11 +26,11 @@ public class PingPongService extends Service implements PingPong {
     static {
         URL url = null;
         try {
-            url = new URL("file:/C:/Users/Burbulas/InventiND/playground-camel/src/main/resources/PingPong.wsdl");
+            url = new URL("file:/home/dev/Documents/InventiND/playground-camel/src/main/resources/PingPong.wsdl");
         } catch (MalformedURLException e) {
             java.util.logging.Logger.getLogger(PingPongService.class.getName())
                 .log(java.util.logging.Level.INFO, 
-                     "Can not initialize the default wsdl from {0}", "file:/C:/Users/Burbulas/InventiND/playground-camel/src/main/resources/PingPong.wsdl");
+                     "Can not initialize the default wsdl from {0}", "file:/home/dev/Documents/InventiND/playground-camel/src/main/resources/PingPong.wsdl");
         }
         WSDL_LOCATION = url;
     }
