@@ -10,7 +10,6 @@
                            http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd"
 >
     <bean id="playgroundRouteBuilder" class="lt.inventi.playground.PlaygroundRouteBuilder"/>
-    <bean id="testBean" class="lt.inventi.playground.TestBean"/>
 
     <amq:broker useJmx="false" persistent="true">
         <amq:transportConnectors>
@@ -29,7 +28,7 @@
             <!--<bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>-->
         <!--</cxf:inInterceptors>-->
         <cxf:properties>
-            <entry key="dataFormat" value="MESSAGE"/>
+            <entry key="dataFormat" value="PAYLOAD"/>
         </cxf:properties>
     </cxf:cxfEndpoint>
 </beans>
