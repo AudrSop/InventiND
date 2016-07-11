@@ -11,8 +11,7 @@ public class PlaygroundRouteBuilder extends RouteBuilder {
                     .when().simple("${body} != ''")
                         .to("bean:lowerCase?method=toLower(${body})")
                         .setBody(body().append(" My random additional Worlds!"))
-                        .to("file://../?fileName=${file:name.noext}-result.${file:ext}&charset=utf-8")
-                    .otherwise()
+                        .end()
                         .to("file://../?fileName=${file:name.noext}-result.${file:ext}&charset=utf-8");
     }
 }
