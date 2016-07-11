@@ -28,7 +28,7 @@
             <bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>
         </cxf:inInterceptors>
         <cxf:properties>
-            <entry key="dataFormat" value="PAYLOAD"/>
+            <entry key="dataFormat" value="MESSAGE"/>
         </cxf:properties>
     </cxf:cxfEndpoint>
     <cxf:cxfEndpoint id="soapEndpoint"
@@ -40,7 +40,7 @@
             <bean class="org.apache.cxf.transport.common.gzip.GZIPInInterceptor"/>
         </cxf:inInterceptors>
         <cxf:properties>
-            <entry key="dataFormat" value="PAYLOAD"/>
+            <entry key="dataFormat" value="MESSAGE"/>
         </cxf:properties>
     </cxf:cxfEndpoint>
 </beans>
