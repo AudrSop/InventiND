@@ -5,6 +5,8 @@
  */
 package lt.inventi.playground;
 
+import org.apache.camel.Body;
+
 /**
  *
  * @author Burbulas
@@ -14,15 +16,15 @@ public class FirstBean {
     public FirstBean() {
     }
 
-    public void helloWorldMethod(String v) {
+    public void helloWorldMethod(@Body String v) {
         System.out.println("Hello, World! " + v);
     }
 
-    public void helloVilniusMethod(String v) {
+    public void helloVilniusMethod(@Body String v) {
         System.out.println("Hello, Vilnius! " + v);
     }
 
-    public void helloEveryoneMethod(String v) {
+    public void helloEveryoneMethod(@Body String v) {
         System.out.println("Hello, Everyone! " + v);
     }
 
