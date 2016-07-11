@@ -1,21 +1,24 @@
 package lt.inventi.playground;
 
-
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-
-import org.apache.camel.builder.xml.Namespaces;
 import org.apache.camel.converter.jaxb.JaxbDataFormat;
-import org.apache.camel.spi.DataFormat;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
+import static sun.invoke.util.VerifyAccess.getPackageName;
 
 public class PlaygroundRouteBuilder extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        JAXBContext ctx = JAXBContext.newInstance(EchoInput.class);
-        DataFormat jaxBDataFormat = new JaxbDataFormat(ctx);
-        from("cxf:bean:pingPongEndpoint").unmarshal(jaxBDataFormat).to("log:info");
+        JaxbDataFormat qadJaxb = new JaxbDataFormat(getPackageName(lt.inventi.playground.ObjectFactory.class));
+
+        from("cxf:bean:pingPongEndpoint").unmarshal(qadJaxb).to("log:info").process(new Processor() {
+            public void process(Exchange exchange) throws Exception {
+              EchoInput payload = exchange.getIn().getBody(EchoInput.class);
+                EchoInputResponse myResponse = new EchoInputResponse();
+                myResponse.setEchoInputReturn(payload.getInput());
+                exchange.getOut().setBody(myResponse);
+            }
+        }).to("log:info");
     }
 }
