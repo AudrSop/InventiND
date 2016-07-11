@@ -12,7 +12,7 @@ import org.apache.camel.processor.aggregate.AggregationStrategy;
  *
  * @author Burbulas
  */
-public class AggregationCounterClass implements AggregationStrategy {
+public class AggregationCounter implements AggregationStrategy {
 
     public static int lineCounter = 1;
 

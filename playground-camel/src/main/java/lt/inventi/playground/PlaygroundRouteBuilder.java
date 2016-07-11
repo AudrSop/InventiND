@@ -8,7 +8,7 @@ public class PlaygroundRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
          from("file://../?fileName=MyFile.txt&charset=utf-8&noop=true")
                 .split(body().tokenize("\\n"), 
-                                new AggregationCounterClass()).log("${body}").end()
+                                new AggregationCounter()).log("${body}").end()
                 .to("file://../?fileName=${file:name.noext}-result.${file:ext}&charset=utf-8");
         
     }
