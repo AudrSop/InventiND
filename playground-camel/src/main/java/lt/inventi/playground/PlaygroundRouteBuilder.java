@@ -12,6 +12,6 @@ public class PlaygroundRouteBuilder extends RouteBuilder {
     public void configure() throws Exception {
         JAXBContext ctx = JAXBContext.newInstance(EchoInput.class);
         DataFormat jaxBDataFormat = new JaxbDataFormat(ctx);
-        from("cxf:bean:pingPongEndpoint").unmarshal(jaxBDataFormat).to("log:info");
+        from("cxf:bean:pingPongEndpoint").unmarshal(jaxBDataFormat).to("log:info").to("cxf:bean:soapEndpoint").to("log:info");
     }
 }
